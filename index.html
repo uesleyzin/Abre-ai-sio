@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protocolo Namoro.exe</title>
+<style>
+:root {
+  --site-primary: #ff477e;
+  --site-secondary: #25152f;
+  --site-background: #120d1a;
+  --site-on-primary: #ffffff;
+  --site-on-secondary: #fff2f7;
+  --site-on-background: #fff4f8;
+  --site-font-body: ui-rounded, "Segoe UI", system-ui, sans-serif;
+  --site-font-heading: ui-rounded, "Segoe UI", system-ui, sans-serif;
+  --site-heading-scale: 1;
+  --site-spacing-scale: 1;
+  --site-radius-scale: 1;
+  --site-decoration-opacity: 1;
+  color-scheme: light dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--site-font-body); background: var(--site-background); color: var(--site-on-background); }
+#app { min-height: 100vh; width: 100%; border-radius: 0; overflow: hidden; position: relative; background: var(--site-background); }
+.ambient { position: absolute; inset: 0; pointer-events: none; opacity: var(--site-decoration-opacity); background: radial-gradient(circle at 15% 15%, #ff477e25, transparent 32%), radial-gradient(circle at 90% 80%, #a855f725, transparent 35%); }
+main { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: calc(28px * var(--site-spacing-scale)) 20px 54px; }
+.topline { display: flex; justify-content: space-between; align-items: center; gap: 12px; color: #d9c4d6; font: 12px ui-monospace, SFMono-Regular, monospace; letter-spacing: .08em; text-transform: uppercase; }
+.pill { border: 1px solid #ff477e65; border-radius: 999px; padding: 8px 12px; color: #ff9dbb; }
+.hero { text-align: center; padding: clamp(38px, 9vw, 82px) 0 35px; }
+.heart { font-size: clamp(54px, 10vw, 84px); display: inline-block; filter: drop-shadow(0 0 24px #ff477e70); animation: pulse 1.8s ease-in-out infinite; }
+.eyebrow { color: #ff9dbb; font: 12px ui-monospace, monospace; letter-spacing: .18em; text-transform: uppercase; margin: 18px 0; }
+h1 { font-size: clamp(36px, 7vw, 68px); line-height: 1.03; letter-spacing: -.045em; margin: 0 auto 20px; max-width: 750px; }
+h1 span { color: #ff6d9a; }
+.sub { max-width: 560px; margin: 0 auto; color: #d6c6d8; line-height: 1.75; font-size: 16px; }
+.panel { background: color-mix(in srgb, var(--site-secondary) 88%, transparent); border: 1px solid #ffffff18; border-radius: calc(22px * var(--site-radius-scale)); padding: clamp(20px, 5vw, 34px); box-shadow: 0 20px 80px #00000025; }
+.terminal-head { display:flex; align-items:center; gap:7px; padding-bottom:18px; border-bottom:1px solid #ffffff15; margin-bottom:22px; }
+.dot { width:9px; height:9px; border-radius:50%; background:#ff6b7e; } .dot:nth-child(2){background:#ffc65c}.dot:nth-child(3){background:#56d69b}
+.terminal-title { margin-left:auto; color:#aa96b2; font:11px ui-monospace,monospace; }
+pre { white-space: pre-wrap; overflow-wrap:anywhere; margin:0; color:#d8cadd; font: 13px/1.9 ui-monospace, SFMono-Regular, monospace; }
+.green { color:#7be3ae; } .pink { color:#ff83a8; } .muted { color:#9887a0; }
+.progress-wrap { height:7px; border-radius:99px; background:#ffffff12; overflow:hidden; margin:18px 0 8px; }
+.progress { width:0%; height:100%; border-radius:99px; background:linear-gradient(90deg,#ff477e,#bd73ff); transition:width .5s ease; }
+.actions { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:24px; }
+button { border:0; border-radius:999px; padding:14px 21px; font:700 14px var(--site-font-body); cursor:pointer; transition:transform .18s, filter .18s; }
+button:hover { transform:translateY(-2px); filter:brightness(1.08); }
+.primary { color:var(--site-on-primary); background:var(--site-primary); box-shadow:0 8px 26px #ff477e30; }
+.secondary { color:#f1dfeF; background:#ffffff0d; border:1px solid #ffffff25; }
+.hidden { display:none; }
+.note { text-align:center; color:#a996b2; font-size:12px; margin-top:18px; line-height:1.7; }
+.letter { margin-top:24px; line-height:1.9; color:#f4e6f1; font-size:16px; }
+.question { text-align:center; padding:24px 0 4px; }
+.question h2 { font-size:clamp(26px,5vw,40px); margin:10px 0 12px; letter-spacing:-.03em; }
+.question p { color:#d5c4d8; line-height:1.7; }
+.yes-screen { text-align:center; padding:20px 0 5px; }
+.yes-screen .big { font-size:58px; }
+footer { text-align:center; color:#796984; font:11px ui-monospace,monospace; padding:26px 0 0; }
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none !important; transition:none !important; } }
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="ambient"></div>
+  <main>
+    <div class="topline"><span>♡ projeto especial</span><span class="pill">status: quase apaixonado</span></div>
+    <section class="hero">
+      <div class="heart" aria-hidden="true">💗</div>
+      <p class="eyebrow">[ iniciando protocolo romântico ]</p>
+      <h1>Tem uma coisa que<br><span>preciso te perguntar...</span></h1>
+      <p class="sub">Desenvolvi uma pequena aplicação usando as tecnologias mais avançadas que conheço: coragem, carinho e um tantinho de vergonha. Está pronta para executar?</p>
+    </section>
+    <section class="panel" aria-live="polite">
+      <div class="terminal-head"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="terminal-title">coracao.js — terminal</span></div>
+      <pre id="terminal"><span class="muted">// verificando dependências do coração...</span>
+<span class="green">✓</span> carinho              <span class="green">[ OK ]</span>
+<span class="green">✓</span> vontade de te ver    <span class="green">[ OK ]</span>
+<span class="green">✓</span> sorrisos bobos        <span class="green">[ OK ]</span>
+<span class="pink">!</span> coragem para perguntar <span class="pink">[ PENDENTE ]</span>
+
+<span class="muted">// clique abaixo para continuar a execução</span></pre>
+      <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+      <div class="actions" id="startActions"><button class="primary" id="start">Executar coração.exe ♥</button></div>
+      <div id="letterSection" class="hidden">
+        <div class="letter"><p>Eu poderia tentar escrever o código perfeito para explicar o que sinto, mas acho que nem a linguagem mais bonita daria conta. A verdade é simples: você deixa meus dias mais leves, meus sorrisos mais fáceis e minha vontade de estar perto de você cada vez maior.</p><p>Não prometo uma história sem bugs — até porque ninguém é perfeito —, mas prometo vontade de aprender, conversar, cuidar e construir algo bonito com você. Se depender de mim, quero que a gente seja aquele tipo de parceria que melhora a vida um do outro, versão após versão. ❤️</p></div>
+        <div class="question"><p class="eyebrow">[ decisão necessária ]</p><h2>Quer namorar comigo?</h2><p>Essa é a única pergunta desse sistema que eu não consigo responder sozinho.</p></div>
+        <div class="actions"><button class="primary" id="yes">SIM! 💖</button><button class="secondary" id="think">Preciso pensar 🥹</button></div>
+        <p class="note">Sem pressão e sem pegadinha. Quero que sua resposta seja de coração. ❤️</p>
+      </div>
+      <div id="yesSection" class="hidden yes-screen"><div class="big">💞🎉💞</div><h2>Deploy realizado com sucesso!</h2><p>O relacionamento foi compilado com carinho e publicado no coração. Que venham muitos capítulos lindos dessa história! ❤️</p><button class="secondary" id="restart">Rever o momento ↻</button></div>
+      <div id="thinkSection" class="hidden yes-screen"><div class="big">🫶</div><h2>Sem pressa, tá?</h2><p>O que eu sinto é sincero, e você merece todo o tempo para pensar. Obrigado por ler até aqui. ❤️</p><button class="secondary" id="back">Voltar à pergunta</button></div>
+    </section>
+    <p class="note">Feito com <span style="color:#ff6d9a">♥</span>, café e um pouco de nervosismo de desenvolvedor.</p>
+    <footer>const sentimento = "sincero"; // sem modo de teste</footer>
+  </main>
+</div>
+<script>
+const start = document.getElementById('start');
+const progress = document.getElementById('progress');
+const letterSection = document.getElementById('letterSection');
+const startActions = document.getElementById('startActions');
+const terminal = document.getElementById('terminal');
+const yesSection = document.getElementById('yesSection');
+const thinkSection = document.getElementById('thinkSection');
+start.addEventListener('click', () => {
+  start.disabled = true;
+  terminal.innerHTML = '<span class="muted">// compilando sentimentos...</span>\n<span class="green">✓</span> memórias boas         <span class="green">[ CARREGADO ]</span>\n<span class="green">✓</span> carinho em cada detalhe <span class="green">[ CARREGADO ]</span>\n<span class="green">✓</span> intenção sincera       <span class="green">[ VALIDADA ]</span>\n<span class="pink">♥</span> preparando pergunta...';
+  progress.style.width = '100%';
+  setTimeout(() => { startActions.classList.add('hidden'); letterSection.classList.remove('hidden'); }, 650);
+});
+document.getElementById('yes').addEventListener('click', () => { letterSection.classList.add('hidden'); yesSection.classList.remove('hidden'); });
+document.getElementById('think').addEventListener('click', () => { letterSection.classList.add('hidden'); thinkSection.classList.remove('hidden'); });
+document.getElementById('back').addEventListener('click', () => { thinkSection.classList.add('hidden'); letterSection.classList.remove('hidden'); });
+document.getElementById('restart').addEventListener('click', () => { yesSection.classList.add('hidden'); startActions.classList.remove('hidden'); letterSection.classList.add('hidden'); progress.style.width='0%'; start.disabled=false; terminal.innerHTML='<span class="muted">// verificando dependências do coração...</span>\n<span class="green">✓</span> carinho              <span class="green">[ OK ]</span>\n<span class="green">✓</span> vontade de te ver    <span class="green">[ OK ]</span>\n<span class="green">✓</span> sorrisos bobos        <span class="green">[ OK ]</span>\n<span class="pink">!</span> coragem para perguntar <span class="pink">[ PENDENTE ]</span>\n\n<span class="muted">// clique abaixo para continuar a execução</span>'; });
+</script>
+</body>
+</html>
